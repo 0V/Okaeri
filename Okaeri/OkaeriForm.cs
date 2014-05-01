@@ -121,6 +121,33 @@ namespace Okaeri
             }
         }
 
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+
+            if ((string)comboVoice.SelectedValue == "userfiles")
+            {
+                if (!(System.IO.File.Exists(userfileName)))
+                {
+                    MessageBox.Show("The voice file was not found.\n Please check file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            string directryName = @"voices/";
+            try
+            {
+                if ((string)comboVoice.SelectedValue == "userfiles")
+                    PlayMusic(userfileName);
+                else
+                    PlayMusic(directryName + (string)comboVoice.SelectedValue);
+            }
+            catch
+            {
+                MessageBox.Show("The voice is not playing .\n Please check file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {
             if (e.Mode == PowerModes.Resume)
@@ -145,5 +172,6 @@ namespace Okaeri
                 new SoundPlayer(fileName).Play();
             }
         }
+
     }
 }

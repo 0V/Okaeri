@@ -35,7 +35,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon0.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -86,7 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\001mojib.png" />
-    <Content Include="favicon0.ico" />
     <Content Include="voices\ohayougozaimasu_02.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
